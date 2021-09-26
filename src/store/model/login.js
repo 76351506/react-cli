@@ -2,18 +2,18 @@
  * @Author: heinan
  * @Date: 2021-04-07 15:14:10
  * @Last Modified by: heinan
- * @Last Modified time: 2021-09-26 09:43:12
+ * @Last Modified time: 2021-09-26 09:40:33
  */
 
 import { UPDATE_TOKEN, UPDATE_HEAD, UPDATE_FOOT } from "@/store/types";
 
 const defaultState = {
   token: "",
-  showHead: true,
-  showFoot: true,
+  showHead: "",
+  showFoot: "",
 };
 
-function app(state = defaultState, { payload, type }) {
+function login(state = defaultState, { payload, type }) {
   switch (type) {
     case UPDATE_TOKEN:
       return {
@@ -21,7 +21,6 @@ function app(state = defaultState, { payload, type }) {
         token: payload,
       };
     case UPDATE_HEAD:
-      console.log(payload);
       return {
         ...state,
         showHead: payload,
@@ -36,4 +35,4 @@ function app(state = defaultState, { payload, type }) {
   }
 }
 
-export default app;
+export default login;
